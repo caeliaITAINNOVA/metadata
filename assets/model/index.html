@@ -1,0 +1,902 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+    
+    
+      
+        <title>Model - DIGITbrain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DIGITbrain" class="md-header__button md-logo" aria-label="DIGITbrain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DIGITbrain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DIGITbrain" class="md-nav__button md-logo" aria-label="DIGITbrain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DIGITbrain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Assets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Assets" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Assets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microservice/" class="md-nav__link">
+        Microservice
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/" class="md-nav__link">
+        Algorithm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model/" class="md-nav__link">
+        Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/" class="md-nav__link">
+        Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ma_pair/" class="md-nav__link">
+        MA Pair
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dma_tuple/" class="md-nav__link">
+        DMA Tuple
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/" class="md-nav__link">
+        Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supporting_metadata/" class="md-nav__link">
+        Supporting Metadata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          Metadata Tables
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Metadata Tables" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Metadata Tables
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microservice/" class="md-nav__link">
+        Microservice
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithm/" class="md-nav__link">
+        Algorithm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Model
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ma_pair/" class="md-nav__link">
+        MA Pair
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dma_tuple/" class="md-nav__link">
+        DMA Tuple
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supporting_metadata/" class="md-nav__link">
+        Supporting Metadata
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>Model</h1>
+
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key</th>
+<th>Subkey</th>
+<th>Type</th>
+<th>example Value</th>
+<th>Comment</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DEFINE</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ID</td>
+<td></td>
+<td>UUID</td>
+<td></td>
+<td>Internal DigitBrain reference (automatically generated)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Name</td>
+<td></td>
+<td>string</td>
+<td></td>
+<td>Name of the model</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Version</td>
+<td></td>
+<td>semver (if model only has revisions, use semver prerelease 0.1, 0.2, etc.)</td>
+<td></td>
+<td>Version of the model</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>License</td>
+<td></td>
+<td>enum tbd in SAD group</td>
+<td></td>
+<td>License of the model</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Provider</td>
+<td></td>
+<td>string</td>
+<td></td>
+<td>Provider name: Institution or Person</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Provider_contacts</td>
+<td></td>
+<td>obj</td>
+<td></td>
+<td>OPTIONAL: Dictionary with keys being phone, email, address - Type takes into account co-simulation models, for which solver info is mandatory (next slide)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>AuthTool</td>
+<td></td>
+<td>enum</td>
+<td></td>
+<td>Authoring Tool used to create the model</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Type</td>
+<td></td>
+<td>enum</td>
+<td></td>
+<td>ML, LCA, 3D FEM and CFD, System simulation, discrete event simulation, co-simulation (it couples a model with specific algorithms) - The original term Path was proposed to be changed (SAD)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Fidelity</td>
+<td></td>
+<td>number</td>
+<td></td>
+<td>OPTIONAL: Error of the model’s prediction</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Model_URI</td>
+<td></td>
+<td>URI</td>
+<td></td>
+<td>Where the model file is stored  Where the model file is stored DigitBrain certified external model repository - We could keep these fields into minimum and add further enums if needed, e.g. Linear_equations</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Model_FILENAME</td>
+<td></td>
+<td>string</td>
+<td></td>
+<td>Name of the model file (if necessary) for example when MODEL_URI points to a repository and not a single file</td>
+<td>optional</td>
+</tr>
+<tr>
+<td></td>
+<td>State_depend</td>
+<td></td>
+<td>bool</td>
+<td></td>
+<td>stateful -&gt; 1, stateless -&gt; 0</td>
+<td></td>
+</tr>
+<tr>
+<td>PARAMETRIZE</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>In-slots</td>
+<td></td>
+<td>array of obj  (key (group.key), name, dimensions (e.g. 2, 3, etc.), units (human-readable-name, exponents, offset, scale), default value, ranges, description)</td>
+<td></td>
+<td>Values on which the model is evaluated (or parameters that might set before or during the evaluation) - Inputs and parameters together, although if needed we can still differentiate them internally in key field for each specific model.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Outputs</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Values that the model approximates</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CosimSolverInfo</td>
+<td></td>
+<td>**</td>
+<td></td>
+<td>OPTIONAL (for co-simulation Type only)</td>
+<td></td>
+</tr>
+<tr>
+<td>Dependant FMUs</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Dependencies</td>
+<td></td>
+<td>array of URI</td>
+<td></td>
+<td>Dependant FMUs for co-simulation</td>
+<td></td>
+</tr>
+<tr>
+<td>OS Requirements</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>osArch</td>
+<td></td>
+<td>enum</td>
+<td></td>
+<td>OS architecture type (e.g. x86_64)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>osType</td>
+<td></td>
+<td>enum</td>
+<td></td>
+<td>OS type (e.g. Windows, Linux)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>osDistribution</td>
+<td></td>
+<td>enum</td>
+<td></td>
+<td>OS distributun (e.g. Ubuntu, Fedora)</td>
+<td></td>
+</tr>
+<tr>
+<td>Hardware Requirements</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>recommendedNumberOfGPUCores</td>
+<td></td>
+<td>number</td>
+<td></td>
+<td>Recommended number of GPU cores</td>
+<td>optional</td>
+</tr>
+<tr>
+<td></td>
+<td>minimumNumberOfGPUCores</td>
+<td></td>
+<td>number</td>
+<td></td>
+<td>Minimum required number of GPU cores</td>
+<td>optional</td>
+</tr>
+<tr>
+<td></td>
+<td>recommendedGPURAM</td>
+<td></td>
+<td>number</td>
+<td></td>
+<td>Recommended GPU memory</td>
+<td>optional</td>
+</tr>
+<tr>
+<td></td>
+<td>minimumGPURAM</td>
+<td></td>
+<td>number</td>
+<td></td>
+<td>Minimum required GPU memory</td>
+<td>optional</td>
+</tr>
+<tr>
+<td></td>
+<td>recommendedRAM</td>
+<td></td>
+<td>number</td>
+<td></td>
+<td>Recommended Memory</td>
+<td>optional</td>
+</tr>
+<tr>
+<td></td>
+<td>minimumRAM</td>
+<td></td>
+<td>number</td>
+<td></td>
+<td>Minimum required memory</td>
+<td>optional</td>
+</tr>
+<tr>
+<td></td>
+<td>recommendedCPUs</td>
+<td></td>
+<td>number</td>
+<td></td>
+<td>Recommended number of CPU cores</td>
+<td>optional</td>
+</tr>
+<tr>
+<td></td>
+<td>minimumCPUs</td>
+<td></td>
+<td>number</td>
+<td></td>
+<td>Minimum required number of CPU cores</td>
+<td>optional</td>
+</tr>
+<tr>
+<td></td>
+<td>requiredDiskSpace</td>
+<td></td>
+<td>number</td>
+<td></td>
+<td>Required amount of disk space in GB</td>
+<td>optional</td>
+</tr>
+<tr>
+<td>PUBLISH</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Description</td>
+<td></td>
+<td>string</td>
+<td></td>
+<td>Model tag description Additional info about model files (e.g. versioning, scope, i.e. what is the model used for, e.g. simulation, control, etc.) - Human readable marketplace description</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../algorithm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Algorithm" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Algorithm
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ma_pair/" class="md-footer__link md-footer__link--next" aria-label="Next: MA Pair" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              MA Pair
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../javascripts/bundle.1514a9a0.min.js"></script>
+      
+    
+  </body>
+</html>
