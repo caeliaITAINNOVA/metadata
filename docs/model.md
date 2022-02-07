@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A model in DIGITbrain is an asset that contains the knowledge related to a specific industrial product instance (i.e., a concrete manufacturing machine or production line), which can hence describe and forecast the behavior of such an instance when specific operating conditions are given (n.b., the process of forecasting a system’s behavior according to specific operating conditions is also known as model evaluation).
+A Db Model is a description of a given behaviour of an Industrial Product (IP) according to its characteristics and operation conditions. The creation of a model could be either manual (file editing) or automatic (obtained from processing / analysing data / simulation results describing the behaviour of a system). A Model instance describes the specific behaviour of one particular IP Instance, by leveraging actual Data and available compatible Algorithm(s). By executing the Algorithm with the actual Data, the Model instance is evaluated by the corresponding Algorithm’s Microservice and generates insights on the IP behaviour.
 
 ## Pre-requisites
 
